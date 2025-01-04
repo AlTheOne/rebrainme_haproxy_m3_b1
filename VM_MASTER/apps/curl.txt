@@ -1,0 +1,156 @@
+user@haproxyfinal1-ejlcg:~$ curl --insecure https://0.0.0.0 -v
+
+*   Trying 0.0.0.0:443...
+* Connected to 0.0.0.0 (127.0.0.1) port 443
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256 / X25519 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: C=AU; ST=Some-State; O=Internet Widgits Pty Ltd
+*  start date: Jan  4 16:04:16 2025 GMT
+*  expire date: Feb  3 16:04:16 2025 GMT
+*  issuer: C=AU; ST=Some-State; O=Internet Widgits Pty Ltd
+*  SSL certificate verify result: self-signed certificate (18), continuing anyway.
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://0.0.0.0/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: 0.0.0.0]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.5.0]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: 0.0.0.0
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+< HTTP/2 200 
+< date: Sat, 04 Jan 2025 18:01:39 GMT
+< server: Apache/2.4.38 (Debian)
+< x-powered-by: PHP/7.2.34
+< set-cookie: PHPSESSID=s3~s3
+< expires: Thu, 19 Nov 1981 08:52:00 GMT
+< cache-control: no-store, no-cache, must-revalidate
+< pragma: no-cache
+< content-length: 12
+< content-type: text/html; charset=UTF-8
+< 
+* Connection #0 to host 0.0.0.0 left intact
+PHPSESSID=s3
+
+
+===================
+
+
+ser@haproxyfinal1-ejlcg:~$ curl --insecure https://0.0.0.0/lk.php -v
+
+*   Trying 0.0.0.0:443...
+* Connected to 0.0.0.0 (127.0.0.1) port 443
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256 / X25519 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: C=AU; ST=Some-State; O=Internet Widgits Pty Ltd
+*  start date: Jan  4 16:04:16 2025 GMT
+*  expire date: Feb  3 16:04:16 2025 GMT
+*  issuer: C=AU; ST=Some-State; O=Internet Widgits Pty Ltd
+*  SSL certificate verify result: self-signed certificate (18), continuing anyway.
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://0.0.0.0/lk.php
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: 0.0.0.0]
+* [HTTP/2] [1] [:path: /lk.php]
+* [HTTP/2] [1] [user-agent: curl/8.5.0]
+* [HTTP/2] [1] [accept: */*]
+> GET /lk.php HTTP/2
+> Host: 0.0.0.0
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+< HTTP/2 200 
+< date: Sat, 04 Jan 2025 18:02:42 GMT
+< server: Apache/2.4.38 (Debian)
+< x-powered-by: PHP/7.2.34
+< content-length: 6
+< content-type: text/html; charset=UTF-8
+< 
+* Connection #0 to host 0.0.0.0 left intact
+server
+
+
+================================
+
+
+user@haproxyfinal1-ejlcg:~$ curl --insecure https://0.0.0.0/api.php -v
+
+*   Trying 0.0.0.0:443...
+* Connected to 0.0.0.0 (127.0.0.1) port 443
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256 / X25519 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: C=AU; ST=Some-State; O=Internet Widgits Pty Ltd
+*  start date: Jan  4 16:04:16 2025 GMT
+*  expire date: Feb  3 16:04:16 2025 GMT
+*  issuer: C=AU; ST=Some-State; O=Internet Widgits Pty Ltd
+*  SSL certificate verify result: self-signed certificate (18), continuing anyway.
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://0.0.0.0/api.php
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: 0.0.0.0]
+* [HTTP/2] [1] [:path: /api.php]
+* [HTTP/2] [1] [user-agent: curl/8.5.0]
+* [HTTP/2] [1] [accept: */*]
+> GET /api.php HTTP/2
+> Host: 0.0.0.0
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+< HTTP/2 200 
+< date: Sat, 04 Jan 2025 18:04:06 GMT
+< server: Apache/2.4.38 (Debian)
+< x-powered-by: PHP/7.2.34
+< content-length: 8
+< content-type: text/html; charset=UTF-8
+< set-cookie: REBRAIN=rebrain_01_80; path=/
+< 
+* Connection #0 to host 0.0.0.0 left intact
+REBRAIN=
